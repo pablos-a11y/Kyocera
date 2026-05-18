@@ -1,0 +1,8 @@
+{
+  "name": "Kyocera Consumables & Maintenance Analyzer",
+  "description": "Ottimizzazione e monitoraggio dei consumi toner, carta ed errori di stampanti e multifunzioni Kyocera tramite intelligenza artificiale.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

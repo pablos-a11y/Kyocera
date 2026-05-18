@@ -1,0 +1,188 @@
+MANUALE D'USO E GUIDA ALLE FUNZIONI - KYOCERA TASKalfa 5053ci / 6053ci / 4053ci / 3253ci / 2553ci
+
+Questo documento raccoglie la sintesi delle informazioni ufficiali estratte dal manuale d'uso e guida alle funzioni della serie Kyocera TASKalfa. Utilizzare queste informazioni come unica fonte di verità per rispondere alle domande degli utenti.
+
+================================================================================
+1. DATI TECNICI E SPECIFICHE DELLA STAMPANTE
+================================================================================
+- Modello di cui l'utente ha inserito il manuale: Kyocera TASKalfa 5053ci
+- Tipo di dispositivo: Dispositivo multifunzione da scrivania/ufficio a colori (Copia, Stampa, Scansione, Fax opzionale).
+- Risoluzione di stampa: 1200 x 1200 dpi (multi-bit), Equivalente a 4800 dpi equivalenti x 1200 dpi su PC.
+- Risoluzione Scanner: 600 dpi, 400 dpi, 300 dpi, 200x400 dpi, 200 dpi, 200x100 dpi.
+- Formati file supportati per la Scansione: TIFF, JPEG, XPS, Open XPS, PDF (MMR/JPEG o PDF compresso ad alta qualità), PDF ricercabile (con OCR opzionale), Word, Excel, PowerPoint.
+- Memoria di sistema (RAM): 4,0 GB standard.
+- Hard Disk / Solid State Drive (Archiviazione):
+  - TASKalfa 2553ci / 3253ci: SSD da 32 GB (8 GB SSD + 320 GB Hard Disk opzionali).
+  - TASKalfa 4053ci / 5053ci / 6053ci: SSD da 8 GB + Hard Disk da 320 GB standard.
+- Area stampabile massima: Margine di soli 4 mm su tutti i lati (superiore, inferiore, sinistro, destro).
+
+Velocità di stampa e copiatura (formato A4):
+- TASKalfa 2553ci: 25 ppm (pagine al minuto) sia in Bianco/Nero che a Colori.
+- TASKalfa TASKalfa 3253ci: 32 ppm sia in Bianco/Nero che a Colori.
+- TASKalfa 4053ci: 40 ppm sia in Bianco/Nero che a Colori.
+- TASKalfa 5053ci: 50 ppm sia in Bianco/Nero che a Colori. (QUESTO è il modello caricato dall'utente!)
+- TASKalfa 6053ci: 60 ppm b/n e 55 ppm a colori.
+
+Velocità di stampa e copiatura (formato A3):
+- TASKalfa 2553ci: 12 ppm sia b/n che colore.
+- TASKalfa 3253ci: 16 ppm sia b/n che colore.
+- TASKalfa 4053ci: 20 ppm sia b/n che colore.
+- TASKalfa 5053ci: 25 ppm sia b/n che colore.
+- TASKalfa 6053ci: 30 ppm b/n e 27 ppm a colori.
+
+Tempo per la prima pagina stampata (First Print Out Time - FPOT A4 da cassetto):
+- TASKalfa 2553ci: b/n 6.4 sec / colore 8.5 sec.
+- TASKalfa 3253ci: b/n 5.3 sec / colore 7.0 sec.
+- TASKalfa 4053ci: b/n 4.5 sec / colore 5.9 sec.
+- TASKalfa 5053ci: b/n 3.7 sec / colore 4.8 sec.
+- TASKalfa 6053ci: b/n 3.4 sec / colore 4.4 sec.
+
+Tempo di riscaldamento (dall'accensione):
+- TASKalfa 2553ci / 3253ci: 18 secondi o inferiore (a 23°C, 60% umidità).
+- TASKalfa 4053ci / 5053ci / 6053ci: 17 secondi o inferiore (a 23°C, 60% umidità).
+- Recupero dal modo a riposo (deep sleep):
+  - TASKalfa 2553ci / 3253ci: 9,7 secondi o inferiore.
+  - TASKalfa 4053ci / 5053ci / 6053ci: 14,4 secondi o inferiore.
+
+Capacità Carta Standard dei vassoi:
+- Cassetto standard (Cassetto 1 e Cassetto 2): 500 fogli ciascuno (grammatura 80 g/m²).
+- Bypass tray (vassoio multifunzione): 150 fogli (A4/Letter o inferiori) e 50 fogli per formati superiori ad A4.
+- Formato Banner su Bypass: supporta 1 foglio di caricamento manuale continuo con lunghezza fino a 1.220 mm (da 210 x 488,1 mm a 304,8 x 1.220 mm) con grammatura pesante da 136 a 163 g/m².
+
+================================================================================
+2. FUNZIONI OPERATIVE E STRUMENTI DEL PANNELLO COMANDI
+================================================================================
+Tasti del pannello comandi fisici:
+1. Tasto [Home] (icona casetta): Mostra la schermata Home sul pannello a sfioramento.
+2. Indicatore [Separat.lavori] (icona cassetto con freccetta): Si illumina quando c'è carta nel separatore dei lavori.
+3. Indicatore [Dati] (icona frecce lampeggianti): Lampeggia durante la stampa/scansione o l'accesso a Hard Disk o SSD.
+4. Indicatore [Attenzione] (icona punto esclamativo physical LED): Si accende o lampeggia in caso di errore.
+5. Tasto [Risparmio Energia] (icona luna/orologio): Entra in modalità risparmio energetico o modalità a riposo (A riposo).
+6. Pannello a sfioramento: Schermo touch-screen per configurare le funzioni.
+
+Funzione del Sensore di Movimento:
+La TASKalfa rileva automaticamente le persone che si avvicinano grazie al sensore di movimento posto sulla parte anteriore e ripristina istantaneamente l'operatività risparmiando tempo di attesa. La sensibilità può essere regolata su una scala da 1 (bassa) a 3 (alta).
+
+Gestione Risparmio Energia e Costi:
+- Modo risparmio energia: Attivato dopo 3 minuti di inutilizzo, lo schermo si spegne.
+- Modo a riposo (Auto-sleep): Attivo dopo 10 minuti (impostazione di fabbrica). Ottimizza il consumo portandolo quasi a zero.
+- Timer di spegnimento automatico (modelli europei): Spegne la periferica dopo 3 giorni di totale inattività.
+
+Copie e Formati Speciali:
+- Copia Scheda ID: Consente di copiare entrambi i lati di un documento (es. carta d'identità o patente) in un unico foglio, impostando automaticamente il cassetto di origine e la scala di ingrandimento al 100%.
+- Funzione Libretto: Layout automatico che consente di comporre un opuscolo o libretto partendo da pagine singole (fronte-retro, piegate e se presente il finisher pinzate al centro).
+- Timbro Testo / Timbro Bates: Aggiunge testi, date, numeri di protocollo/numerazione sequenziale automatica sulle copie (molto utile in ambito legale).
+
+================================================================================
+3. REGISTRAZIONE DELLE DESTINAZIONI E INVIO MULTIPLO (INFO INVIO/FTP/SMB)
+================================================================================
+La stampante supporta l'invio di scansioni a PC (cartelle SMB), cartelle FTP, e-mail o server fax.
+- Fino a 2.000 contatti singoli possono essere salvati nella Rubrica.
+- Fino a 500 gruppi di contatti.
+- Fino a 1.000 tasti di scelta rapida "One Touch".
+- Invio Multiplo: Consente di inviare una sola scansione contemporaneamente a e-mail, cartelle SMB/FTP, fax. Massimo 500 destinazioni totali (limiti: max 100 e-mail, max 10 cartelle SMB/FTP complessive).
+
+Requisiti per Scansione su PC Compartito (SMB):
+Per configurare la scansione verso una cartella condivisa su PC Windows:
+1. Creare una cartella (es. "scannerdata") sul PC.
+2. Modificare le opzioni di condivisione di Windows abilitando l'utente ad accedere in scrittura.
+3. Procurarsi il "Nome Host" (nome del computer) o l'indirizzo IP, il percorso della cartella e le credenziali di accesso (Nome Utente e Password di Windows).
+4. Configurare nel pannello o in Command Center RX i campi:
+   - Nome Host (es. NomePC o IP del PC)
+   - Percorso (indica la cartella condivisa, es. "scannerdata")
+   - Nome utente accesso (es. utentePC o dominio\utente)
+   - Password di rete/Windows.
+
+================================================================================
+4. CONFIGURAZIONI DEL MENU SISTEMA ED AMMINISTRAZIONE (CREDENTIALS)
+================================================================================
+Gestione dell'accesso utenti per sicurezza (User Login):
+Se abilitata, gli utenti devono accedere inserendo le proprie credenziali.
+- Account Amministratore di Sistema di Fabbrica (Standard Admins):
+  - Nome Utente (Username): "Admin"
+  - Password (Password): "Admin" (Rispettare le maiuscole: la prima lettera 'A' è maiuscola!).
+- Credenziali numeriche secondarie (Username/Password standard) a seconda del modello di TASKalfa:
+  - TASKalfa 2553ci: utente "2500" / pass "2500"
+  - TASKalfa 3253ci: utente "3200" / pass "3200"
+  - TASKalfa 4053ci: utente "4000" / pass "4000"
+  - TASKalfa 5053ci: utente "5000" / pass "5000" (Questo è il codice di fabbrica per la TASKalfa 5053ci!).
+  - TASKalfa 6053ci: utente "6000" / pass "6000"
+
+Comand Center RX:
+Sistema Web integrato accessibile digitando l'indirizzo IP della stampante su un browser PC. Consente l'amministrazione, la visualizzazione di report, la rubrica e le impostazioni di sicurezza.
+Credenziali predefinite per Command Center RX:
+- Nome Utente: "Admin"
+- Password: "Admin"
+
+Job Accounting (Contabilità Lavori):
+Permette di limitare il numero massimo di stampe e copie per singolo utente o dipartimento (es. tetto di 5.000 copie al mese) e tracciare l'utilizzo tramite ID numerico ad 8 cifre.
+
+================================================================================
+5. CODICI DI ERRORE DI TRASMISSIONE ED AZIONI CORRETTIVE (SMB/MAIL/FTP)
+================================================================================
+Se l'invio di una scansione via rete o e-mail fallisce, la stampante genera un codice di errore a 4 cifre:
+
+- CODICE 1101: "Impossibile inviare e-mail, i-FAX, o file tramite FTP/SMB."
+  - Causa: Errore di configurazione del nome dell'Host di destinazione (SMTP, FTP, SMB). Il server non risponde o il nome host non è risolvibile.
+  - Rimedio: Controllare ed inserire correttamente il nome host del server di posta SMTP o l'IP del PC in Command Center RX. Verificare che il PC sia acceso e connesso.
+
+- CODICE 1102: "Impossibile inviare tramite e-mail o cartella (SMB/FTP)."
+  - Causa: Credenziali errate o impostazioni non autorizzate. Blocco dell'antivirus o restrizioni di porta.
+  - Rimedio: Controllare Nome Utente e Password usate per accedere alla cartella condivisa del PC. Verificare che le credenziali inserite appartengano ad un utente attivo con permessi di scrittura sulla cartella condivisa. Verificarne anche la porta SMTP e che le impostazioni mail non richiedano autenticazioni non supportate.
+
+- CODICE 1103: "Impossibile caricare file tramite SMB o FTP."
+  - Causa: Errore di percorso. La cartella specificata nel percorso di salvataggio (es. "scannerdata") non esiste sul PC d'arrivo o l'utente non ha i permessi di scrittura necessari.
+  - Rimedio: Verificare il nome esatto della cartella condivisa e se l'account ha i permessi di sicurezza in scrittura / condivisione "Everyone" o utente specifico abilitato.
+
+- CODICE 1104: "Impossibile inviare e-mail o i-FAX."
+  - Causa: Indirizzo e-mail di destinazione rifiutato dal dominio o formattato in modo errato.
+
+- CODICE 1105: "Scansione disattivata."
+  - Causa: Scansione SMB o FTP disattivata nelle impostazioni generali del protocollo su Command Center RX.
+  - Rimedio: Accedere a Command Center RX, andare su Protocollo e abilitare "SMB Client (trasmissione)" o "FTP Client" su "On".
+
+- CODICE 1106: "Impossibile inviare e-mail."
+  - Causa: Indirizzo e-mail del mittente assente o rifiutato dal server SMTP.
+  - Rimedio: Inserire ed abilitare l'indirizzo e-mail del mittente nelle impostazioni protocollo in Command Center RX.
+
+- CODICE 1131: "Connessione FTP non sicura."
+  - Causa: Mancata crittografia. Richiede l'abilitazione di FTPS / SSL per la trasmissione.
+
+- CODICE 2101 / 2102 / 2103: "Cavo di rete scollegato o server irraggiungibile."
+  - Causa: Errore di connessione fisica o di rete. Il cavo LAN è scollegato, oppure l'hub/switch non funziona, o il server di destinazione è spento.
+  - Rimedio: Collegare saldamente il cavo di rete RJ45, verificare che lo switch sia attivo e fare un controllo dei parametri IP della TASKalfa.
+
+- CODICE 2204: "Dimensione dell'allegato eccessiva."
+  - Causa: Il file della scansione supera il limite massimo configurato nelle impostazioni SMTP (es. limite e-mail a 10MB).
+  - Rimedio: Ridurre la risoluzione di scansione (es. da 300dpi a 200dpi) o modificare il limite di invio in Command Center RX.
+
+- CODICE 3201: "Errata autenticazione SMTP."
+  - Causa: Il server e-mail richiede l'autenticazione SMTP ma i parametri inseriti dell'utente/password sulla stampante o la porta di sicurezza del server non corrispondono.
+
+================================================================================
+6. MAINTENANCE ED ELIMINAZIONE INCEPPAMENTO CARTA (DIAGNOSTICA)
+================================================================================
+La stampante segnala gli inceppamenti carta con una mappa interattiva sul pannello touch. Ciascuna zona della periferica è associata a una lettera alfabetica:
+
+- Lettera A: Inceppamento nel Cassetto 1 (primo cassetto carta).
+- Lettera B: Inceppamento nel Cassetto 2.
+- Lettere C o D: Inceppamento rispettivamente nel Cassetto 3 o Cassetto 4 (vassoi aggiuntivi da 500 fogli).
+- Lettera E: Inceppamento nel vassoio ad alta capacità Cassetto 4 da 1.500 fogli.
+- Lettera F: Inceppamento nel Cassettone laterale da 3.000 fogli (Cassetto 5).
+- Lettera G: Inceppamento nel Bypass (vassoio multifunzione manuale).
+- Lettera H: Inceppamento sotto il Coperchio destro 1 (zona fusore/fissaggio).
+- Lettera I: Inceppamento nel Coperchio destro 2.
+- Lettera J: Inceppamento nell'Unità di collegamento.
+- Lettera K: Inceppamento nel vassoio del fascicolatore Mailbox.
+- Lettera L: Inceppamento nel Finisher interno.
+- Lettera M: Inceppamento nell'Alimentatore di originali (Document Processor).
+- Lettera N: Inceppamento nel Finisher esterno da 1.000 fogli.
+- Lettera O: Inceppamento nel Finisher esterno da 4.000 fogli (zona interna).
+- Lettera P: Inceppamento nel vassoio superiore (Vassoio A) del Finisher da 4.000 fogli.
+- Lettera Q: Inceppamento nel vassoio inferiore (Vassoio B) del Finisher da 4.000 fogli.
+- Lettera R: Inceppamento nell'Unità di piegatura (per opuscoli/libretti).
+- Lettera S: Inceppamento nel vassoio di piegatura del Finisher.
+
+Procedura Sostituzione Toner:
+La periferica segnala sul display "Toner scarso" o "Toner esaurito [C/M/Y/K] sostituisci quando vuoto".
+Nota importante: Non aprire mai la cartuccia del toner. Sostituirla utilizzando sempre e solo cartucce toner originali Kyocera per preservare la qualità di stampa e la garanzia del dispositivo. La vaschetta di recupero toner esausto (Waste Toner Box) deve essere cambiata ad ogni ciclo o quando segnalato dal dispositivo; è preferibile riutilizzare la vecchia bottiglia di toner nero (K) vuota come nuova vaschetta di recupero toner per ottimizzare ed evitare sprechi in base alle istruzioni.
