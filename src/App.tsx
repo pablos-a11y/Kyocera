@@ -134,8 +134,8 @@ export default function App() {
         }
       }
       
-      // Se non si dispone di dati salvati localmente, si pre-popola la cronologia di base con i mock storici
-      if (!localReports || localReports.length === 0) {
+      // Se non si dispone di dati salvati localmente, si pre-popola la cronologia di base con i mock storici solo al primissimo avvio
+      if (localDataStr === null) {
         localReports = MOCK_HISTORICAL_REPORTS;
         localStorage.setItem("kyocera_reports_fallback", JSON.stringify(localReports));
       }
@@ -232,16 +232,12 @@ export default function App() {
     setReports((prev) => {
       const remaining = prev.filter((r) => r.id !== reportId);
       localStorage.setItem("kyocera_reports_fallback", JSON.stringify(remaining));
+      
+      if (selectedReportId === reportId) {
+        setSelectedReportId(remaining.length > 0 ? remaining[remaining.length - 1].id : null);
+      }
       return remaining;
     });
-
-    if (selectedReportId === reportId) {
-      setReports((prev) => {
-        const remaining = prev.filter((r) => r.id !== reportId);
-        setSelectedReportId(remaining.length > 0 ? remaining[remaining.length - 1].id : null);
-        return prev;
-      });
-    }
   };
 
   // Convert PDF file upload to Base64 and post to server
