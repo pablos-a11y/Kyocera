@@ -487,19 +487,6 @@ export default function App() {
               severity: errInfo.severity
             });
           });
-        } else {
-          if (seededRandom() < 0.45) {
-            const keys = ["J1100", "J3102", "C3100", "C2000"];
-            const chosen = keys[Math.floor(seededRandom() * keys.length)];
-            const errInfo = possibleErrorDesc[chosen];
-            const errorTime = reportDate + " " + String(Math.floor(8 + seededRandom() * 10)).padStart(2, "0") + ":" + String(Math.floor(10 + seededRandom() * 45)).padStart(2, "0");
-            errorLogs.push({
-              code: chosen,
-              description: errInfo.desc,
-              dateTime: errorTime,
-              severity: errInfo.severity
-            });
-          }
         }
 
         parsedReport = {
