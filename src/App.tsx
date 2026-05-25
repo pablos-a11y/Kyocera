@@ -18,7 +18,8 @@ import {
   ExternalLink,
   ChevronRight,
   Database,
-  HelpCircle
+  HelpCircle,
+  LogOut
 } from "lucide-react";
 
 import { KyoceraReport, DriveAccount } from "./types";
@@ -28,8 +29,12 @@ import ConsumoCarta from "./components/ConsumoCarta";
 import RegistroErrori from "./components/RegistroErrori";
 import DriveSync from "./components/DriveSync";
 import ManualeChat from "./components/ManualeChat";
+import LoginScreen from "./components/LoginScreen";
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    return localStorage.getItem("kyocera_auth") === "true";
+  });
   const [reports, setReports] = useState<KyoceraReport[]>([]);
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"dashboard" | "toner" | "carta" | "errori" | "drive" | "manuale">("dashboard");
@@ -332,6 +337,10 @@ export default function App() {
 
   const activeReport = reports.find((r) => r.id === selectedReportId) || reports[reports.length - 1] || null;
 
+  if (!isAuthenticated) {
+    return <LoginScreen onLoginSuccess={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 text-slate-900 flex flex-col font-sans select-none selection:bg-red-500/20">
       
@@ -351,11 +360,21 @@ export default function App() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 gap-2">
           <span className="flex items-center space-x-1.5 text-xs text-slate-600 font-mono bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
             <span className="w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse" />
-            <span>AI Client Ready (Gemini-Flash-Latest)</span>
+            <span>AI Client Ready</span>
           </span>
+          <button
+            onClick={() => {
+              localStorage.removeItem("kyocera_auth");
+              setIsAuthenticated(false);
+            }}
+            className="flex items-center space-x-1 text-xs font-bold bg-white hover:bg-slate-50 text-slate-700 px-3 py-1.5 rounded-lg border border-gray-300 shadow-xs cursor-pointer active:scale-95 transition-all"
+          >
+            <LogOut className="w-3.5 h-3.5 text-slate-500" />
+            <span>Disconnetti</span>
+          </button>
         </div>
       </header>
 
