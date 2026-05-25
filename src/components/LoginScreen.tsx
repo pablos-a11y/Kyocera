@@ -25,7 +25,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
 
     // Simulate a brief secure check for a premium feel
     setTimeout(() => {
-      if (username === "admin" && password === "Pippo123") {
+      if (username === "admin" && password === "pippo123") {
         localStorage.setItem("kyocera_auth", "true");
         onLoginSuccess();
       } else {
