@@ -31,6 +31,47 @@ import DriveSync from "./components/DriveSync";
 import ManualeChat from "./components/ManualeChat";
 import LoginScreen from "./components/LoginScreen";
 
+export const MOCK_HISTORICAL_REPORTS: KyoceraReport[] = [
+  {
+    id: "historical-1",
+    reportDate: "2026-04-10",
+    printerModel: "Kyocera TASKalfa 3554ci",
+    serialNumber: "RF80Y15346",
+    tonerLevels: { black: 75, cyan: 60, magenta: 45, yellow: 50 },
+    counters: { total: 124500, a4Total: 112000, a3Total: 12500, monoTotal: 84000, colorTotal: 40500 },
+    errorLogs: [
+      { code: "J1100", description: "Inceppamento carta nel cassetto 1", dateTime: "2026-04-08 14:22", severity: "warning" }
+    ],
+    savedToDrive: false
+  },
+  {
+    id: "historical-2",
+    reportDate: "2026-04-25",
+    printerModel: "Kyocera TASKalfa 3554ci",
+    serialNumber: "RF80Y15346",
+    tonerLevels: { black: 52, cyan: 40, magenta: 25, yellow: 30 },
+    counters: { total: 138600, a4Total: 125100, a3Total: 13500, monoTotal: 92600, colorTotal: 46000 },
+    errorLogs: [
+      { code: "C3100", description: "Errore motore di ventilazione / fusore", dateTime: "2026-04-22 09:12", severity: "critical" },
+      { code: "J1100", description: "Inceppamento carta nel cassetto 1", dateTime: "2026-04-24 16:45", severity: "warning" }
+    ],
+    savedToDrive: false
+  },
+  {
+    id: "historical-3",
+    reportDate: "2026-05-10",
+    printerModel: "Kyocera TASKalfa 3554ci",
+    serialNumber: "RF80Y15346",
+    tonerLevels: { black: 30, cyan: 20, magenta: 8, yellow: 12 },
+    counters: { total: 151200, a4Total: 136200, a3Total: 15000, monoTotal: 101050, colorTotal: 50150 },
+    errorLogs: [
+      { code: "J3102", description: "Inceppamento carta nell'unità duplex", dateTime: "2026-05-09 11:30", severity: "warning" }
+    ],
+    savedToDrive: true,
+    driveFilePath: "Nuvola_Reports/Kyocera_TASKalfa_3554ci_Report_2026-05-10.csv"
+  }
+];
+
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
     return localStorage.getItem("kyocera_auth") === "true";
@@ -68,29 +109,40 @@ export default function App() {
         const contentType = res.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
           const data = await res.json();
-          setReports(data.reports || []);
-          localStorage.setItem("kyocera_reports_fallback", JSON.stringify(data.reports || []));
-          if (data.reports && data.reports.length > 0 && !selectedReportId && !skipAutoSelect) {
-            // Select newest report by default only if none is selected
-            setSelectedReportId(data.reports[data.reports.length - 1].id);
+          const serverReports = data.reports || [];
+          if (serverReports.length > 0) {
+            setReports(serverReports);
+            localStorage.setItem("kyocera_reports_fallback", JSON.stringify(serverReports));
+            if (!selectedReportId && !skipAutoSelect) {
+              setSelectedReportId(serverReports[serverReports.length - 1].id);
+            }
+            return;
           }
-          return;
         }
       }
-      throw new Error("Mancata risposta JSON del server");
+      throw new Error("Mancata risposta dal server o lista vuota");
     } catch (err) {
       console.warn("Utilizzo la cronologia locale di fallback (Offline/Vercel/Static):", err);
+      let localReports: KyoceraReport[] = [];
       const localDataStr = localStorage.getItem("kyocera_reports_fallback");
+      
       if (localDataStr) {
         try {
-          const localReports = JSON.parse(localDataStr);
-          setReports(localReports);
-          if (localReports.length > 0 && !selectedReportId && !skipAutoSelect) {
-            setSelectedReportId(localReports[localReports.length - 1].id);
-          }
+          localReports = JSON.parse(localDataStr);
         } catch (e) {
           console.error("Errore decodifica reports locali:", e);
         }
+      }
+      
+      // Se non si dispone di dati salvati localmente, si pre-popola la cronologia di base con i mock storici
+      if (!localReports || localReports.length === 0) {
+        localReports = MOCK_HISTORICAL_REPORTS;
+        localStorage.setItem("kyocera_reports_fallback", JSON.stringify(localReports));
+      }
+      
+      setReports(localReports);
+      if (localReports.length > 0 && !selectedReportId && !skipAutoSelect) {
+        setSelectedReportId(localReports[localReports.length - 1].id);
       }
     }
   };
@@ -170,16 +222,25 @@ export default function App() {
 
   const handleDeleteReport = async (reportId: string) => {
     try {
-      const res = await fetch(`/api/reports/${reportId}`, { method: "DELETE" });
-      if (res.ok) {
-        setReports((prev) => prev.filter((r) => r.id !== reportId));
-        if (selectedReportId === reportId) {
-          const remaining = reports.filter((r) => r.id !== reportId);
-          setSelectedReportId(remaining.length > 0 ? remaining[remaining.length - 1].id : null);
-        }
-      }
+      // Prova a notificare il server per persistenza remota se presente
+      await fetch(`/api/reports/${reportId}`, { method: "DELETE" });
     } catch (err) {
-      console.error("Errore nell'eliminazione del report:", err);
+      console.warn("Impossibile eliminare il report dal server remoto:", err);
+    }
+
+    // In ogni caso, esegui l'eliminazione locale e sincronizza localStorage (fondamentale per Vercel/Offline)
+    setReports((prev) => {
+      const remaining = prev.filter((r) => r.id !== reportId);
+      localStorage.setItem("kyocera_reports_fallback", JSON.stringify(remaining));
+      return remaining;
+    });
+
+    if (selectedReportId === reportId) {
+      setReports((prev) => {
+        const remaining = prev.filter((r) => r.id !== reportId);
+        setSelectedReportId(remaining.length > 0 ? remaining[remaining.length - 1].id : null);
+        return prev;
+      });
     }
   };
 
@@ -269,19 +330,45 @@ export default function App() {
         };
         const seededRandom = createSeededRand(file.name + file.size);
 
-        // Try extracting any plaintext sequences from the binary base64 file block
-        let extractedRawText = "";
+        // Try extracting real plaintext from PDF using PDF.js or decoded base64 as basic fallback
+        let extractedText = "";
         try {
-          const base64Data = b64Str.replace(/^data:application\/pdf;base64,/, "");
-          const decodedBin = atob(base64Data);
-          // Extract ASCII sequences and human labels from the structure of the PDF
-          extractedRawText = decodedBin.replace(/[^\x20-\x7E\s]/g, " ");
-        } catch (errDec) {
-          console.warn("Impossibile decodificare base64 per fallback:", errDec);
+          const arrayBuffer = await new Promise<ArrayBuffer>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsArrayBuffer(file);
+            reader.onload = () => resolve(reader.result as ArrayBuffer);
+            reader.onerror = reject;
+          });
+
+          if ((window as any).pdfjsLib) {
+            const pdfjs = (window as any).pdfjsLib;
+            const loadingTask = pdfjs.getDocument({ data: new Uint8Array(arrayBuffer) });
+            const pdf = await loadingTask.promise;
+            let fullText = "";
+            for (let i = 1; i <= pdf.numPages; i++) {
+              const page = await pdf.getPage(i);
+              const textContent = await page.getTextContent();
+              const pageText = textContent.items.map((item: any) => item.str).join(" ");
+              fullText += pageText + "\n";
+            }
+            extractedText = fullText;
+          }
+        } catch (pdfErr) {
+          console.warn("Errore d'estrazione PDF.js, uso fallback basico:", pdfErr);
+        }
+
+        if (!extractedText) {
+          try {
+            const base64Data = b64Str.replace(/^data:application\/pdf;base64,/, "");
+            const decodedBin = atob(base64Data);
+            extractedText = decodedBin.replace(/[^\x20-\x7E\s]/g, " ");
+          } catch (errDec) {
+            console.warn("Impossibile decodificare base64 per fallback:", errDec);
+          }
         }
 
         // Combine file name and extracted raw string to analyze
-        const analysisSource = (file.name + " " + extractedRawText).replace(/\s+/g, " ");
+        const analysisSource = (file.name + " " + extractedText).replace(/\s+/g, " ");
 
         // 1. Parse Printer Model
         let printerModel = "Kyocera TASKalfa 3554ci";
