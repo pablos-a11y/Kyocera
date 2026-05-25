@@ -442,10 +442,10 @@ export default function DashboardGenerale({
                           e.stopPropagation();
                           setReportIdToDelete(report.id);
                         }}
-                        className="opacity-0 group-hover:opacity-100 text-slate-400 hover:text-red-600 p-1 rounded hover:bg-gray-200 transition"
+                        className="text-slate-400 hover:text-red-600 hover:bg-red-50 p-1.5 rounded transition"
                         title="Elimina report"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   </div>
